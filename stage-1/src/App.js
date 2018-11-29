@@ -8,8 +8,8 @@ import { Route, Switch } from 'react-router-dom';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
 
     this.state = {
       shoppingCart: []

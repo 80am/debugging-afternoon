@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'react-router-dom';
 import reducer from './reducer';
 import reduxPromiseMiddleware from 'redux-promise-middleware';
 

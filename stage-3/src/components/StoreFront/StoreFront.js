@@ -8,12 +8,17 @@ class StoreFront extends Component {
     componentDidMount() {
         this.props.getAllProducts();
     }
+    componentDidUpdate(prevprops) {
+        console.log("thisthisthis")
+        if (prevprops.products.length !== this.props.products.length) this.props.getAllProducts()
+    }
+
 
     render() {
         console.log(this.props.products);
         let productDisplay = this.props.products.map((element, index) => {
             return (
-                <div className="product-container" key={index}>
+                <div className="product-container" key={index} >
                     <h2>{element.title}</h2>
                     <img src={element.image} alt="" />
                     <h2>{element.desc}</h2>
@@ -37,4 +42,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {addToShoppingCart, getAllProducts})(StoreFront);
+export default connect(mapStateToProps, { addToShoppingCart, getAllProducts })(StoreFront);
